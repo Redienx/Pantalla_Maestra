@@ -32,15 +32,15 @@
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblCelular = new System.Windows.Forms.Label();
             this.lblCorreo = new System.Windows.Forms.Label();
-            this.btnCrearClientes = new System.Windows.Forms.Button();
             this.lblEdad = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
+            this.txtEdad = new System.Windows.Forms.TextBox();
             this.txtCelular = new System.Windows.Forms.TextBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.txtEdad = new System.Windows.Forms.TextBox();
+            this.btnCrearClientes = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblNombre
@@ -79,16 +79,6 @@
             this.lblCorreo.TabIndex = 7;
             this.lblCorreo.Text = "Correo";
             // 
-            // btnCrearClientes
-            // 
-            this.btnCrearClientes.Location = new System.Drawing.Point(110, 254);
-            this.btnCrearClientes.Name = "btnCrearClientes";
-            this.btnCrearClientes.Size = new System.Drawing.Size(97, 42);
-            this.btnCrearClientes.TabIndex = 8;
-            this.btnCrearClientes.Text = "Crear";
-            this.btnCrearClientes.UseVisualStyleBackColor = true;
-            this.btnCrearClientes.Click += new System.EventHandler(this.btnCrearClientes_Click);
-            // 
             // lblEdad
             // 
             this.lblEdad.AutoSize = true;
@@ -108,52 +98,62 @@
             this.lblTitulo.TabIndex = 11;
             this.lblTitulo.Text = "Crear Cliente";
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(231, 254);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(104, 43);
-            this.btnCancelar.TabIndex = 48;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(136, 64);
+            this.txtNombre.Location = new System.Drawing.Point(152, 67);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(189, 22);
-            this.txtNombre.TabIndex = 0;
+            this.txtNombre.Size = new System.Drawing.Size(163, 22);
+            this.txtNombre.TabIndex = 12;
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(136, 102);
+            this.txtApellido.Location = new System.Drawing.Point(152, 105);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(189, 22);
-            this.txtApellido.TabIndex = 2;
+            this.txtApellido.Size = new System.Drawing.Size(163, 22);
+            this.txtApellido.TabIndex = 13;
+            // 
+            // txtEdad
+            // 
+            this.txtEdad.Location = new System.Drawing.Point(152, 144);
+            this.txtEdad.Name = "txtEdad";
+            this.txtEdad.Size = new System.Drawing.Size(163, 22);
+            this.txtEdad.TabIndex = 14;
+            this.txtEdad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEdad_KeyPress);
             // 
             // txtCelular
             // 
-            this.txtCelular.Location = new System.Drawing.Point(136, 179);
+            this.txtCelular.Location = new System.Drawing.Point(152, 182);
             this.txtCelular.Name = "txtCelular";
-            this.txtCelular.Size = new System.Drawing.Size(189, 22);
-            this.txtCelular.TabIndex = 4;
+            this.txtCelular.Size = new System.Drawing.Size(163, 22);
+            this.txtCelular.TabIndex = 15;
             this.txtCelular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEdad_KeyPress);
             // 
             // txtCorreo
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(136, 217);
+            this.txtCorreo.Location = new System.Drawing.Point(152, 217);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(189, 22);
-            this.txtCorreo.TabIndex = 6;
+            this.txtCorreo.Size = new System.Drawing.Size(163, 22);
+            this.txtCorreo.TabIndex = 16;
             // 
-            // txtEdad
+            // btnCrearClientes
             // 
-            this.txtEdad.Location = new System.Drawing.Point(136, 141);
-            this.txtEdad.Name = "txtEdad";
-            this.txtEdad.Size = new System.Drawing.Size(189, 22);
-            this.txtEdad.TabIndex = 9;
-            this.txtEdad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEdad_KeyPress);
+            this.btnCrearClientes.Location = new System.Drawing.Point(127, 259);
+            this.btnCrearClientes.Name = "btnCrearClientes";
+            this.btnCrearClientes.Size = new System.Drawing.Size(94, 37);
+            this.btnCrearClientes.TabIndex = 17;
+            this.btnCrearClientes.Text = "Crear";
+            this.btnCrearClientes.UseVisualStyleBackColor = true;
+            this.btnCrearClientes.Click += new System.EventHandler(this.btnCrearClientes_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(227, 259);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(94, 37);
+            this.btnCancelar.TabIndex = 18;
+            this.btnCancelar.Text = "Cancerlar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // fmrCrearClientes
             // 
@@ -161,18 +161,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(431, 308);
             this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnCrearClientes);
+            this.Controls.Add(this.txtCorreo);
+            this.Controls.Add(this.txtCelular);
+            this.Controls.Add(this.txtEdad);
+            this.Controls.Add(this.txtApellido);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.lblEdad);
-            this.Controls.Add(this.txtEdad);
-            this.Controls.Add(this.btnCrearClientes);
             this.Controls.Add(this.lblCorreo);
-            this.Controls.Add(this.txtCorreo);
             this.Controls.Add(this.lblCelular);
-            this.Controls.Add(this.txtCelular);
             this.Controls.Add(this.lblApellido);
-            this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.txtNombre);
             this.Name = "fmrCrearClientes";
             this.Text = "Crear Clientes";
             this.ResumeLayout(false);
@@ -185,14 +185,14 @@
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.Label lblCelular;
         private System.Windows.Forms.Label lblCorreo;
-        private System.Windows.Forms.Button btnCrearClientes;
         private System.Windows.Forms.Label lblEdad;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtApellido;
+        private System.Windows.Forms.TextBox txtEdad;
         private System.Windows.Forms.TextBox txtCelular;
         private System.Windows.Forms.TextBox txtCorreo;
-        private System.Windows.Forms.TextBox txtEdad;
+        private System.Windows.Forms.Button btnCrearClientes;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

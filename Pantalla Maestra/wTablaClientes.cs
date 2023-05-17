@@ -18,8 +18,8 @@ namespace Pantalla_Maestra
 {
     public partial class fmrTablaClientes : Form
     {
-        string Nombre, Apellido, Celular, Correo;
-
+        // Varibles
+        int indice = 0;
         public fmrTablaClientes()
         {
             InitializeComponent();
@@ -226,17 +226,61 @@ namespace Pantalla_Maestra
             fmrBorrarCliente fmrBorrarCliente = new fmrBorrarCliente();
             fmrBorrarCliente.Show();
         }
-
+        // Evento que se activa al hacer clic en el botón "Crear"
         private void btnCrear_Click(object sender, EventArgs e)
         {
             fmrCrearClientes fmrCrearClientes = new fmrCrearClientes();
             fmrCrearClientes.Show();
         }
-
+        // Evento que se activa al hacer clic en el botón "Actualizar"
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             fmrActualizarClientes fmrActualizarClientes = new fmrActualizarClientes();
             fmrActualizarClientes.Show();
+        }
+
+        // Evento que se activa Cuando una celda del datagridview cambia
+        private void dtgUsuarios_CurrentCellChanged(object sender, EventArgs e)
+        {
+            if (dtgUsuarios.CurrentRow != null)
+            {
+                indice = dtgUsuarios.CurrentRow.Index;
+            }
+        }
+
+        // Evento que se activa al hacer clic en el botón "Siguiente"
+        private void btnSiguiente_Click(object sender, EventArgs e)
+        {
+            int Siguiente = indice + 1;
+            try
+            {
+                dtgUsuarios.CurrentCell = dtgUsuarios.Rows[Siguiente].Cells[dtgUsuarios.CurrentCell.ColumnIndex];
+            }
+            catch (Exception ex) { MessageBox.Show("Llego al tope maximo"); }
+        }
+
+        // Evento que se activa al hacer clic en el botón "Actualizar"
+        private void btnAnterior_Click(object sender, EventArgs e)
+        {
+            int Anterior = indice - 1;
+            try 
+            {
+                dtgUsuarios.CurrentCell = dtgUsuarios.Rows[Anterior].Cells[dtgUsuarios.CurrentCell.ColumnIndex];
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Llego al tope Maximo");
+            }
+        }
+
+        private void btnPrimero_Click(object sender, EventArgs e)
+        {
+            dtgUsuarios.CurrentCell = dtgUsuarios.Rows[0].Cells[dtgUsuarios.CurrentCell.ColumnIndex];
+        }
+
+        private void btnUltimo_Click(object sender, EventArgs e)
+        {
+            dtgUsuarios.CurrentCell = dtgUsuarios.Rows[dtgUsuarios.RowCount - 1].Cells[0];
         }
     }
 }
